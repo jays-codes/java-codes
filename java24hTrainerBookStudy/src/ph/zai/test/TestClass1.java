@@ -6,6 +6,8 @@ public class TestClass1 {
 		System.out.print("Official Project Folders ACTIVATED");
 
 		System.out.print("testing branch creation.. -> created local branch DEV");
+		
+		System.out.print("testing branch merging.. -> merging from origin/dev");
 	}
 
 }
