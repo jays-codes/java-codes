@@ -23,8 +23,8 @@ public class TestCoinComputer {
 
 		double inputVal = 598.97;
 		
-		String ans = CoinComputer.processInputValue(coinArr, inputVal);
-		System.out.print(ans);
+		CoinComputer.processInputValue(coinArr, inputVal);
+		//System.out.print(ans);
 	}
 
 }

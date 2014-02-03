@@ -33,14 +33,8 @@ public class Coin implements Comparable<Coin>{
 	}
 
 	@Override
-	public int compareTo(Coin o) {
-		//Coin otherCoin = (Coin)o;
-		
+	public int compareTo(Coin o) {		
 		return Double.compare(this.value, o.value);
-		
-//		return (this.value < o.value)  ? -1
-//				: (this.value > o.value) ? 1
-//				: 0 ;
 	}
 
 	@Override 
