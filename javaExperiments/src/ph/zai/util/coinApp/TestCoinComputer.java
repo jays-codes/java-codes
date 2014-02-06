@@ -1,15 +1,18 @@
 package ph.zai.util.coinApp;
 
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
 public class TestCoinComputer {
 
-	public static void main(String[] args) {
-		if (args.length<2){
-			System.out.print("Invalid number. Program Exiting.");
-			System.exit(1);
-		}
-		
-		Coin[] coinArr = new Coin[10]; //.01, .10, .25, .5, 1, 5, 10, 20, 50, 100
-		
+	public Coin[] coinArr = null;
+	public double inputVal;
+	
+	@Before
+	public void setUp() throws Exception {
+		coinArr = new Coin[10]; //.01, .10, .25, .5, 1, 5, 10, 20, 50, 100
 		coinArr[0] = new Coin(.01, "penny");
 		coinArr[5] = new Coin(.05, "nickle");
 		coinArr[7] = new Coin(.1, "dime");
@@ -21,10 +24,16 @@ public class TestCoinComputer {
 		coinArr[8] = new Coin(50, "fifties");
 		coinArr[3] = new Coin(100, "benjamins");
 
-		double inputVal = 598.97;
+		inputVal = 598.97;
+	}
+
+	@Test
+	public final void testProcessInputValue() {
 		
-		CoinComputer.processInputValue(coinArr, inputVal);
-		//System.out.print(ans);
+		int[] expected = {5,1,2,0,8,1,1,2,0,2};
+		int[] actual = CoinComputer.processInputValue(coinArr, inputVal);
+		
+		assertArrayEquals("breaking up 598.97", expected, actual );
 	}
 
 }
