@@ -2,12 +2,17 @@ package ph.zai.util.coinApp;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class TestCoinComputer {
 
 	public Coin[] coinArr = null;
+	public ArrayList<Coin> coinArrList = new ArrayList<Coin>();
 	public double inputVal;
 	
 	@Before
@@ -24,6 +29,10 @@ public class TestCoinComputer {
 		coinArr[8] = new Coin(50, "fifties");
 		coinArr[3] = new Coin(100, "benjamins");
 
+		for (Coin coin : coinArr){
+			coinArrList.add(coin);
+		}
+		
 		inputVal = 598.97;
 	}
 
@@ -36,4 +45,12 @@ public class TestCoinComputer {
 		assertArrayEquals("breaking up 598.97", expected, actual );
 	}
 
+	@Test
+	public final void testProcessInputValueArraylist(){
+		//int[] expected = {5,1,2,0,8,1,1,2,0,2};
+		List<Integer> expected = Arrays.asList(5,1,2,0,8,1,1,2,0,2);
+		
+		List<Integer> actual = CoinComputer.processInputValue(coinArrList, inputVal);
+		assertEquals("[ArrayList version] breaking up 598.97", expected, actual );
+	}
 }

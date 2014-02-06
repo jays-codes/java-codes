@@ -1,6 +1,9 @@
 package ph.zai.util.coinApp;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class CoinComputer {
 		
@@ -11,8 +14,7 @@ public class CoinComputer {
 		int denomCount = coinArr.length-1;
 		int[] resultsArr = new int[denomCount+1];
 		
-		for (int i=0;i<denomCount;i++) resultsArr[i]=0;
-		
+		Arrays.fill(resultsArr, 0);
 		Arrays.sort(coinArr);
 		
 		for (int i=denomCount, i2=0;i>=0;i--, i2++){
@@ -27,8 +29,31 @@ public class CoinComputer {
 		}
 		
 		return resultsArr;
-		
-
 	}
-	
+
+	public static List<Integer> processInputValue(ArrayList<Coin> coinList,
+			double inputVal) {
+		
+		ArrayList<Integer> resultsList = new ArrayList<Integer>();
+		Collections.sort(coinList);
+		Collections.reverse(coinList);
+		double amt2Change=inputVal;
+		double coinVal = 0;
+		
+		for (Coin coin : coinList){
+			coinVal = coin.getValue();
+			
+			if (amt2Change>=coinVal){
+				
+				resultsList.add((int) (amt2Change/coinVal));
+				amt2Change = amt2Change%coinVal;
+				
+				if (amt2Change==0) break;
+			} else {
+				resultsList.add(new Integer(0));
+			}
+		}
+		
+		return resultsList;
+	}
 }
