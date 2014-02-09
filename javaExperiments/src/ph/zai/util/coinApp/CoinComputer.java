@@ -34,7 +34,7 @@ public class CoinComputer {
 	public static List<Integer> processInputValue(ArrayList<Coin> coinList,
 			double inputVal) {
 		
-		ArrayList<Integer> resultsList = new ArrayList<Integer>();
+		List<Integer> resultsList = new ArrayList<Integer>();
 		Collections.sort(coinList);
 		Collections.reverse(coinList);
 		double amt2Change=inputVal;
