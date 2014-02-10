@@ -1,8 +1,10 @@
-package ph.zai.exercises;
+package ph.zai.exercises.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import ph.zai.exercises.FizzString;
 
 public class TestFizzString {
 
