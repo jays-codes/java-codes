@@ -30,7 +30,11 @@ public class JaysIntArrayImpl {
 		arr.insertAt(77, 1);
 		arr.printArray();
 		
+		arr.addValue(78);
+		arr.printArray();
 		
+		arr.pop();
+		arr.printArray();
 		
 	}
 

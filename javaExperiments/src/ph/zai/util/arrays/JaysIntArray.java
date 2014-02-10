@@ -84,6 +84,12 @@ public class JaysIntArray {
 		}
 	}
 	
+	public void pop(){
+		if (zeroSize>0){
+			this.popAt(zeroSize);
+		}
+	}
+			
 	public void addValue(int x){
 		if (zeroSize<arr.length){
 			zeroSize++;
