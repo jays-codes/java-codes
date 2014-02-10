@@ -32,11 +32,12 @@ public class CoinComputer {
 	}
 
 	public static List<Integer> processInputValue(ArrayList<Coin> coinList,
-			double inputVal) {
+			double inputVal) {		
 		
 		List<Integer> resultsList = new ArrayList<Integer>();
 		Collections.sort(coinList);
 		Collections.reverse(coinList);
+		
 		double amt2Change=inputVal;
 		double coinVal = 0;
 		
