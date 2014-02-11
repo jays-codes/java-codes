@@ -18,23 +18,23 @@ public class JaysIntArrayImpl {
 //			System.out.println(idx[i]);
 //		}
 		
-		JaysIntArray arr = new JaysIntArray(10);
-		arr.randomFill(10, 20);
-		arr.printArray();
+		JaysIntArray arr = new JaysIntArray(15);
+		arr.randomFill(1000, 2000);
+		arr.printArrayHorizontally();
 		
 		arr.pop(12);
 		arr.pop(15);
 		arr.pop(13);
-		arr.printArray();
+		arr.printArrayHorizontally();
 		
 		arr.insertAt(77, 1);
-		arr.printArray();
+		arr.printArrayHorizontally();
 		
 		arr.addValue(78);
-		arr.printArray();
+		arr.printArrayHorizontally();
 		
 		arr.pop();
-		arr.printArray();
+		arr.printArrayHorizontally();
 		
 	}
 

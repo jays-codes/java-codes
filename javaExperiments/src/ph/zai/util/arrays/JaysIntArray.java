@@ -25,6 +25,36 @@ public class JaysIntArray {
 		}
 	}
 
+	public void printArrayHorizontally(){
+		System.out.print("\n\n");
+		for (int i=0;i<=zeroSize;i++){
+			System.out.print(padInteger(i, arr[i], true) + " | ");
+		}
+		System.out.print("\n");
+
+		for (int i=0;i<=zeroSize;i++){
+			System.out.print(padInteger(i, arr[i], false) + " | ");
+		}
+		System.out.print("\n");
+	}
+
+	private String padInteger(int idx, int val, boolean isIdx){
+		int idxDigits = getNumOfDigits(idx);
+		int valDigits = getNumOfDigits(val);
+		int diff = Math.abs(idxDigits-valDigits);
+		if (diff>0){
+			int biggerDigit = Math.max(idxDigits, valDigits);
+			String str = isIdx ? String.valueOf(idx) : String.valueOf(val);
+			return String.format(
+					"%-" + biggerDigit + "s", str);
+		} 
+		return isIdx ? String.valueOf(idx) : String.valueOf(val);
+	}
+		
+	private int getNumOfDigits(int x){
+		return String.valueOf(x).length();
+	}
+	
 	public int valueAt(int i){
 		if (i<=zeroSize) return this.arr[i];
 		return 0;
@@ -91,14 +121,14 @@ public class JaysIntArray {
 	}
 			
 	public void addValue(int x){
-		if (zeroSize<arr.length){
+		if (zeroSize<arr.length-1){
 			zeroSize++;
 			this.arr[zeroSize] = x;
 		}
 	}
 	
 	public void insertAt(int x,int i){
-		if (zeroSize<arr.length){
+		if (zeroSize<arr.length-1){
 			zeroSize++;
 			for (int j=zeroSize;j>i;j--){
 				this.arr[j] = this.arr[j-1];
