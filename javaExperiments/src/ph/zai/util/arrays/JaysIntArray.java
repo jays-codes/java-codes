@@ -13,7 +13,7 @@ public class JaysIntArray {
 	public void randomFill(int x, int y){
 		
 		for (int i=0;i<=zeroSize;i++){
-			arr[i] = (int) (x + Math.random()*(y-x));
+			arr[i] = (int) (x + Math.random()*((y-x)+1));
 		}
 	}
 	
