@@ -1,4 +1,6 @@
-package ph.zai.util.arrays;
+package ph.zai.util.impl;
+
+import ph.zai.util.arrays.JaysIntArray;
 
 public class JaysIntArrayImpl {
 

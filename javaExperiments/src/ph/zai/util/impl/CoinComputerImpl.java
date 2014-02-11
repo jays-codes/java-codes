@@ -1,6 +1,9 @@
-package ph.zai.util.coinApp;
+package ph.zai.util.impl;
 
 import java.util.Arrays;
+
+import ph.zai.util.coinApp.Coin;
+import ph.zai.util.coinApp.CoinComputer;
 
 public class CoinComputerImpl {
 
