@@ -19,7 +19,7 @@ public class JaysIntArrayImpl {
 //		}
 		
 		JaysIntArray arr = new JaysIntArray(15);
-		arr.randomFill(1000, 2000);
+		arr.randomFill(1000, 1020);
 		arr.printArrayHorizontally();
 		
 		arr.pop(12);
