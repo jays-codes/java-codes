@@ -153,8 +153,8 @@ public class JaysIntArray {
 		System.out.println("runtime: " + runTime + " milliseconds");
 	}
 
-	public void bubbleSort(boolean verbose) {
-		System.out.println("Running Bubblesort");
+	public void jaysSelectionSort(boolean verbose) {
+		System.out.println("Running jays initial selection sort");
 		long timeStr = System.currentTimeMillis();
 
 		for (int i = 0; i <= zeroSize; i++) {
@@ -179,8 +179,32 @@ public class JaysIntArray {
 		System.out.println("runtime: " + runTime + " milliseconds");
 	}
 
-	public static int[] bubbleSort(int[] intArr, boolean verbose) {
-		System.out.println("Running Bubblesort");
+	public void selectionSort(boolean verbose) {
+		System.out.println("Running selection sort");
+		long timeStr = System.currentTimeMillis();
+		int currMinVal=0;
+		
+		for (int i = 0; i <= zeroSize; i++) {
+			for (int j = i + 1; j <= zeroSize; j++) {
+				if (arr[i] > arr[j]) {
+					currMinVal = j;
+				}
+			}
+			swap(i, currMinVal);
+
+			if (verbose)
+				System.out.print("\ni new value: " + i);
+		}
+		long timeEnd = System.currentTimeMillis();
+		int runTime = (int) (timeEnd - timeStr);
+
+		System.out.println("duration: " + (int) timeStr + " to "
+				+ (int) timeEnd);
+		System.out.println("runtime: " + runTime + " milliseconds");
+	}
+	
+	public static int[] jaySelectionSort(int[] intArr, boolean verbose) {
+		System.out.println("Running jays initial selection sort");
 		long timeStr = System.currentTimeMillis();
 		int arrLength = intArr.length - 1;
 		int temp = 0;
@@ -208,7 +232,7 @@ public class JaysIntArray {
 		int highIdx = zeroSize;
 		int currSearchIdx = 0;
 
-		this.bubbleSort(false);
+		this.jaysSelectionSort(false);
 
 		while (lowIdx <= highIdx) {
 			currSearchIdx = (lowIdx + highIdx) / 2;
@@ -238,7 +262,7 @@ public class JaysIntArray {
 		int currSearchIdx = 0;
 		int[] results;
 
-		mArr = JaysIntArray.bubbleSort(mArr, false);
+		mArr = JaysIntArray.jaySelectionSort(mArr, false);
 
 		while (lowIdx <= highIdx) {
 			currSearchIdx = (lowIdx + highIdx) / 2;

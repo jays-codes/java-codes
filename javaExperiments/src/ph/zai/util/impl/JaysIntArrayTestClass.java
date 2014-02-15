@@ -79,22 +79,38 @@ public class JaysIntArrayTestClass {
 		/*
 		 * testing binary search method - static version
 		 */
-		int[] intArr = { 15, 15, 15, 15, 17, 11, 11, 12, 
-				12, 12, 12, 16,16,16,16,16,16 };
-		JaysIntArray.printArrayHorizontally(intArr);
-		int x = 16;
-		int results[] = JaysIntArray.binarySearchForValue(intArr, x);
-		JaysIntArray.printArrayHorizontally(intArr);
-		if (results[0]<0){
-			System.out.println("value " + x + " not present in current array");
-			
-		} else {
-			System.out.println("value: " + x + " found at index(es): ");
-			for (int i=0;i<results.length;i++){
-				System.out.print(" " + results[i]);
-			}
-		}
-		
+		// int[] intArr = { 15, 15, 15, 15, 17, 11, 11, 12,
+		// 12, 12, 12, 16,16,16,16,16,16 };
+		// JaysIntArray.printArrayHorizontally(intArr);
+		// int x = 16;
+		// int results[] = JaysIntArray.binarySearchForValue(intArr, x);
+		// JaysIntArray.printArrayHorizontally(intArr);
+		// if (results[0]<0){
+		// System.out.println("value " + x + " not present in current array");
+		//
+		// } else {
+		// System.out.println("value: " + x + " found at index(es): ");
+		// for (int i=0;i<results.length;i++){
+		// System.out.print(" " + results[i]);
+		// }
+		// }
+
+		/*
+		 * comparing initial selection sort with actual selection sort
+		 */
+		JaysIntArray arr = new JaysIntArray(50000);
+		arr.randomFill(1, 5000);
+		int[] intArr2 = Arrays.copyOf(arr.getArr(), arr.getArr().length);
+		JaysIntArray arr2 = new JaysIntArray(intArr2);
+
+		//arr2.printArrayHorizontally();
+		arr2.jaysSelectionSort(false);
+		//arr2.printArrayHorizontally();
+		System.out.println();
+		//arr.printArrayHorizontally();
+		arr.selectionSort(false);
+		//arr.printArrayHorizontally();
+
 	}
 
 }
