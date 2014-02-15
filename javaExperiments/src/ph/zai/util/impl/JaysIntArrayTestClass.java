@@ -114,18 +114,18 @@ public class JaysIntArrayTestClass {
 		/*
 		 * comparing selection sort with insert sort
 		 */
-		JaysIntArray arr = new JaysIntArray(50000);
-		arr.randomFill(1000, 50000);
+		JaysIntArray arr = new JaysIntArray(10);
+		arr.randomFill(10, 20);
 		int[] intArr2 = Arrays.copyOf(arr.getArr(), arr.getArr().length);
 		JaysIntArray arr2 = new JaysIntArray(intArr2);
 
-		//arr2.printArrayHorizontally();
+		arr2.printArrayHorizontally();
 		arr2.selectionSort(false);
-		//arr2.printArrayHorizontally();
+		arr2.printArrayHorizontally();
 		System.out.println();
-		//arr.printArrayHorizontally();
+		arr.printArrayHorizontally();
 		arr.insertionSort(false);
-		//arr.printArrayHorizontally();
+		arr.printArrayHorizontally();
 
 	}
 

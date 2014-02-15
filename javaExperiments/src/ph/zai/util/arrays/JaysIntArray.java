@@ -163,22 +163,30 @@ public class JaysIntArray {
 		System.out.println("runtime: " + runTime + " milliseconds");
 	}
 
-	public void insertionSort(boolean verbose){
+	public void insertionSort(boolean verbose) {
 		System.out.println("Running insertion sort");
 		long timeStr = System.currentTimeMillis();
-		int j=0;
+		int j = 0;
 		int insertVal = 0;
-		
-		for (int i=1;i<=zeroSize;i++){
-			j=i;
+
+		for (int i = 1; i <= zeroSize; i++) {
+			j = i;
 			insertVal = arr[i];
-			while (j>0 && insertVal<arr[j-1]) {
-				arr[j] = arr[j-1];
-				arr[j-1] = insertVal;
+			while (j > 0 && insertVal < arr[j - 1]) {
+				arr[j] = arr[j - 1];
+
+				/*
+				 * jay : initially, i didn't have the arr[j] assignment after
+				 * the while loop, that was wrong because the only time we
+				 * should move the insertVal is when we've hit the bottom of the
+				 * comparisons (when j is at it's lowest val)
+				 */
+				// arr[j-1] = insertVal;
 				j--;
 			}
+			arr[j] = insertVal;
 		}
-		
+
 		long timeEnd = System.currentTimeMillis();
 		int runTime = (int) (timeEnd - timeStr);
 
@@ -186,18 +194,18 @@ public class JaysIntArray {
 				+ (int) timeEnd);
 		System.out.println("runtime: " + runTime + " milliseconds");
 	}
-	
+
 	public void selectionSort(boolean verbose) {
 		System.out.println("Running selection sort");
 		long timeStr = System.currentTimeMillis();
-		int currMinVal=0;
-		
+		int currMinVal = 0;
+
 		for (int i = 0; i <= zeroSize; i++) {
 			currMinVal = i;
-			for (int j = i+1; j <= zeroSize; j++) {
+			for (int j = i + 1; j <= zeroSize; j++) {
 				if (arr[currMinVal] > arr[j]) {
 					currMinVal = j;
-				} 
+				}
 			}
 			swap(i, currMinVal);
 		}
@@ -208,7 +216,7 @@ public class JaysIntArray {
 				+ (int) timeEnd);
 		System.out.println("runtime: " + runTime + " milliseconds");
 	}
-	
+
 	public static int[] jaySelectionSort(int[] intArr, boolean verbose) {
 		System.out.println("Running jays initial selection sort");
 		long timeStr = System.currentTimeMillis();
@@ -260,7 +268,7 @@ public class JaysIntArray {
 	/*
 	 * To process duplicates, once the search value has been found, a
 	 * bi-directional linear search is done from the idx of that value to
-	 * determine from which idx up to what idx does that value occur. 
+	 * determine from which idx up to what idx does that value occur.
 	 */
 	public static int[] binarySearchForValue(int[] mArr, int x) {
 		int lowIdx = 0;
