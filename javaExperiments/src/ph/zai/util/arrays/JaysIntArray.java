@@ -173,7 +173,7 @@ public class JaysIntArray {
 			j=i;
 			insertVal = arr[i];
 			while (j>0 && insertVal<arr[j-1]) {
-				arr[i] = arr[j-1];
+				arr[j] = arr[j-1];
 				arr[j-1] = insertVal;
 				j--;
 			}
