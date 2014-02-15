@@ -10,7 +10,7 @@ public class JaysIntArrayTestClass {
 
 		/*
 		 * Testing various JayIntArray methods
-		 * */
+		 */
 		// JaysIntArray arr = new JaysIntArray(20);
 		// arr.printArray();
 		//
@@ -45,29 +45,56 @@ public class JaysIntArrayTestClass {
 		/*
 		 * comparing dereks bubble sort and my own version of bubblesort
 		 */
-		 JaysIntArray arr = new JaysIntArray(10);
-		 arr.randomFill(1, 50);
-		 int[] intArr2 = Arrays.copyOf(arr.getArr(), arr.getArr().length);
-		 JaysIntArray arr2 = new JaysIntArray(intArr2);
-		
-		 arr2.printArrayHorizontally();
-		 arr2.dereksBubbleSort(false);
-		 arr2.printArrayHorizontally();
-		 System.out.println();
-		 arr.printArrayHorizontally();
-		 arr.bubbleSort(false);
-		 arr.printArrayHorizontally();
-		
+		// JaysIntArray arr = new JaysIntArray(10);
+		// arr.randomFill(1, 50);
+		// int[] intArr2 = Arrays.copyOf(arr.getArr(), arr.getArr().length);
+		// JaysIntArray arr2 = new JaysIntArray(intArr2);
+		//
+		// arr2.printArrayHorizontally();
+		// arr2.dereksBubbleSort(true);
+		// arr2.printArrayHorizontally();
+		// System.out.println();
+		// arr.printArrayHorizontally();
+		// arr.bubbleSort(true);
+		// arr.printArrayHorizontally();
+
+		// /*
+		// * testing binary search method
+		// */
+		// JaysIntArray arr = new JaysIntArray(10);
+		// arr.randomFill(10, 13);
+		// int[] intArr2 = Arrays.copyOf(arr.getArr(), arr.getArr().length);
+		// JaysIntArray arr2 = new JaysIntArray(intArr2);
+		//
+		// arr.printArrayHorizontally();
+		// int x = 12;
+		// int result = arr.binarySearchForValue(x);
+		// arr.printArrayHorizontally();
+		// if (result >= 0)
+		// System.out.println("value : " + x + " found at index [" + result
+		// + "]");
+		// else
+		// System.out.println("value " + x + " not present in current array");
+
 		/*
-		 * testing binary search method
-		 * */
-//		 JaysIntArray arr = new JaysIntArray(10);
-//		 arr.randomFill(1, 50);
-//		 int[] intArr2 = Arrays.copyOf(arr.getArr(), arr.getArr().length);
-//		 JaysIntArray arr2 = new JaysIntArray(intArr2);
-//
-//		 arr.printArrayHorizontally();
-		 
+		 * testing binary search method - static version
+		 */
+		int[] intArr = { 15, 15, 15, 15, 17, 11, 11, 12, 
+				12, 12, 12, 16,16,16,16,16,16 };
+		JaysIntArray.printArrayHorizontally(intArr);
+		int x = 16;
+		int results[] = JaysIntArray.binarySearchForValue(intArr, x);
+		JaysIntArray.printArrayHorizontally(intArr);
+		if (results[0]<0){
+			System.out.println("value " + x + " not present in current array");
+			
+		} else {
+			System.out.println("value: " + x + " found at index(es): ");
+			for (int i=0;i<results.length;i++){
+				System.out.print(" " + results[i]);
+			}
+		}
+		
 	}
 
 }
