@@ -110,22 +110,6 @@ public class JaysIntArray {
 		return false;
 	}
 
-	/*
-	 * find smallest element in the array put it in i
-	 */
-	public void selectionSort() {
-		int temp = 0;
-		for (int i = 0; i <= zeroSize; i++) {
-			for (int j = i; j <= zeroSize; j++) {
-				temp = arr[j];
-				if (temp > arr[j]) {
-					temp = arr[j];
-				}
-			}
-			arr[i] = temp;
-		}
-	}
-
 	public void dereksBubbleSort(boolean verbose) {
 		System.out.println("Running dereks Bubblesort");
 		long timeStr = System.currentTimeMillis();
@@ -179,25 +163,47 @@ public class JaysIntArray {
 		System.out.println("runtime: " + runTime + " milliseconds");
 	}
 
+	public void insertionSort(boolean verbose){
+		System.out.println("Running insertion sort");
+		long timeStr = System.currentTimeMillis();
+		int j=0;
+		int insertVal = 0;
+		
+		for (int i=1;i<=zeroSize;i++){
+			j=i;
+			insertVal = arr[i];
+			while (j>0 && insertVal<arr[j-1]) {
+				arr[i] = arr[j-1];
+				arr[j-1] = insertVal;
+				j--;
+			}
+		}
+		
+		long timeEnd = System.currentTimeMillis();
+		int runTime = (int) (timeEnd - timeStr);
+
+		System.out.println("duration: " + (int) timeStr + " to "
+				+ (int) timeEnd);
+		System.out.println("runtime: " + runTime + " milliseconds");
+	}
+	
 	public void selectionSort(boolean verbose) {
 		System.out.println("Running selection sort");
 		long timeStr = System.currentTimeMillis();
 		int currMinVal=0;
 		
 		for (int i = 0; i <= zeroSize; i++) {
-			for (int j = i + 1; j <= zeroSize; j++) {
-				if (arr[i] > arr[j]) {
+			currMinVal = i;
+			for (int j = i+1; j <= zeroSize; j++) {
+				if (arr[currMinVal] > arr[j]) {
 					currMinVal = j;
-				}
+				} 
 			}
 			swap(i, currMinVal);
-
-			if (verbose)
-				System.out.print("\ni new value: " + i);
 		}
+
 		long timeEnd = System.currentTimeMillis();
 		int runTime = (int) (timeEnd - timeStr);
-
 		System.out.println("duration: " + (int) timeStr + " to "
 				+ (int) timeEnd);
 		System.out.println("runtime: " + runTime + " milliseconds");
