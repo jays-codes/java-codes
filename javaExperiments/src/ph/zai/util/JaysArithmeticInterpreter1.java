@@ -20,8 +20,11 @@ public class JaysArithmeticInterpreter1 {
 			if (x.equals("(")) {
 				
 			}
-			else if (x.equals("+") || x.equals("-") || 
-						x.equals("*") || x.equals("/")) 
+			else if (
+					x.equals("+") || x.equals("-") || 
+					x.equals("*") || x.equals("/") ||
+					x.equals("sqrt")
+			) 
 				operators.push(x); 
 			else if (x.equals(")")){
 				dVal = operands.pop();
@@ -30,6 +33,7 @@ public class JaysArithmeticInterpreter1 {
 				else if (x.equals("*")) dVal = operands.pop() * dVal;
 				else if (x.equals("-")) dVal = operands.pop() - dVal;
 				else if (x.equals("/")) dVal = operands.pop() / dVal;
+				else if (x.equals("sqrt")) dVal = Math.sqrt(dVal);
 				operands.push(dVal);
 			} else operands.push(Double.parseDouble(x));		
 		}
@@ -37,19 +41,25 @@ public class JaysArithmeticInterpreter1 {
 	}
 	
 	public String[] validateExpression(String str){
+		str.replaceAll(" ", "");
 		StringBuilder sbStr = new StringBuilder();
 		
 		char ch = 0;
 		for (int i=0;i<str.length();i++){
 			ch = str.charAt(i);
 			
-			if (ch=='+' || ch=='-' || ch=='*' || ch=='(' || ch==')'){
+			if (ch=='+' || ch=='-' || ch=='*' ||
+					ch=='(' || ch==')' || ch=='/'){
 				sbStr.append(':');
 				sbStr.append(ch);
 				sbStr.append(':');
-			} else if (String.valueOf(ch).matches("[0-9]")){
+			} else if (
+					String.valueOf(ch).matches("[0-9]") ||
+					String.valueOf(ch).matches("[a-zA-Z]") ||
+					String.valueOf(ch).matches(".") 
+					){
 				sbStr.append(ch);
-			}
+			} 
 		}
 		String[] results = sbStr.toString().replaceAll("::", ":").split(":");
 		return results;
