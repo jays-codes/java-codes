@@ -13,7 +13,7 @@ public class TestRecursiveBinarySearch {
 		int[] intArr = {12,34,54,23,11,87,4,5,79,123,2,1,13};
 		int key = 87;
 		System.out.print("index=" + RecursiveBinarySearch.rank(intArr, key));
-		assertEquals(1, RecursiveBinarySearch.rank(intArr, key));
+		assertEquals(11, RecursiveBinarySearch.rank(intArr, key));
 	}
 
 }
