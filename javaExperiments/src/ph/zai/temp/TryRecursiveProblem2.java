@@ -1,5 +1,8 @@
 package ph.zai.temp;
-
+/*
+ * Jay's notes: mystery1() computes for lcm and 
+ * mystery2() computes for x^y;
+ * */
 public class TryRecursiveProblem2 {
 
 	public static void main(String[] args) {
