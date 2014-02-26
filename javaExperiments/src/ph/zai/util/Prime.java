@@ -7,8 +7,8 @@ package ph.zai.util;
  * */
 public class Prime {
 	public static boolean is(long x){
-		//return process(x);
-		return gotRemainder(x, 2);
+		return process(x);
+		//return gotRemainder(x, 2);
 	}
 	
 	public static boolean gotRemainder(long orig, long i){
@@ -18,7 +18,7 @@ public class Prime {
 	}
 
 	public static boolean process(long x){
-		for (int i=2;i<x;i++){
+		for (int i=2;i*i<x;i++){
 			if (x%i==0) return false;
 		}
 		return true;
