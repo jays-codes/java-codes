@@ -9,9 +9,14 @@ public class TryRecursiveProblem2 {
 		val = TryRecursiveProblem2.mystery(3, 11);
 		System.out.println(val);
 
-		val = TryRecursiveProblem2.mystery2(2, 25);
+		val = TryRecursiveProblem2.mystery(3, 11);
 		System.out.println(val);
 
+		val = TryRecursiveProblem2.mystery(6, 9);
+		System.out.println(val);
+
+		val = TryRecursiveProblem2.mystery2(3, 11);
+		System.out.println(val);
 
 	}
 
