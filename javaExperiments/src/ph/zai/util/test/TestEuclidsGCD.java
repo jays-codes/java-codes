@@ -14,6 +14,10 @@ public class TestEuclidsGCD {
 
 		System.out.println("gcd(18,48) : " 
 		+ EuclidsGCD.of(18, 48));
+		
+		int gcd = EuclidsGCD.of(new int[]{18, 48, 3, 4});
+		System.out.println("gcd(18,48,3,4) : " + gcd);
+
 	}
 
 }
