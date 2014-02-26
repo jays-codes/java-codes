@@ -2,8 +2,8 @@ package ph.zai.util;
 
 public class EuclidsGCD {
 	public static int of(int x, int y){
-		if (x%y==0) return y;
-		else if (x%y==1) return -1; 
+		if (y==0) return x;
+		else if (y==1) return -1; 
 		else {
 			return of(y, x%y);
 		}
