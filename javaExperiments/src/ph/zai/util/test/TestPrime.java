@@ -10,7 +10,7 @@ public class TestPrime {
 
 	@Test
 	public final void test() {
-		assertEquals(false, Prime.is(1299828234));
+		assertEquals(true, Prime.is(1299827));
 		
 	}
 
