@@ -45,6 +45,10 @@ public class FIFOQueue<Item> {
 		return item;
 	}
 
+	public void makeRing(){
+		last.next = first;
+	}
+	
 	public Iterator<Node> iterator() {
 		return new ReverseArrayIterator();
 	}

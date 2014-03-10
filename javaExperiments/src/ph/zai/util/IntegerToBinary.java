@@ -20,6 +20,7 @@ public class IntegerToBinary {
 			str = str + ints.pop();
 		}
 		return str;
+	
 		
 	}
 }
