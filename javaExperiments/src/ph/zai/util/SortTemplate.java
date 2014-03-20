@@ -1,7 +1,5 @@
 package ph.zai.util;
 
-import sedgewicks.stdlib.In;
-
 public abstract class SortTemplate {
 	public abstract void sort(Comparable[] a);
 
