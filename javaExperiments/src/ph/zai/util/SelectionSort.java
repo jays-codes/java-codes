@@ -2,7 +2,7 @@ package ph.zai.util;
 
 import sedgewicks.stdlib.In;
 
-public class Selection extends SortTemplate {
+public class SelectionSort extends SortTemplate {
 
 	public void sort(Comparable[] a) {
 		int N = a.length;
@@ -21,12 +21,12 @@ public class Selection extends SortTemplate {
         try {
             In in = new In(args[0]);
 
-            Selection selection = new Selection();
+            SelectionSort selectionSort = new SelectionSort();
             
     		String[] a = in.readAllStrings();
-    		selection.sort(a);
+    		selectionSort.sort(a);
     		assert isSorted(a);
-    		selection.show(a);
+    		selectionSort.show(a);
 
             
 
