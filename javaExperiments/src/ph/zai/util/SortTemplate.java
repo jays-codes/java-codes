@@ -32,11 +32,19 @@ public class SortTemplate {
 	
 	public static void main(String[] args){
 		
-		In inputFile = new In(args[0]);
+        try {
+            In in = new In(args[0]);
+
+    		String[] a = in.readAllStrings();
+    		sort(a);
+    		assert isSorted(a);
+    		show(a);
+
+            
+
+        }
+        catch (Exception e) { System.out.println(e); }
 		
-		String[] a = inputFile.readStrings();
-		sort(a);
-		assert isSorted(a);
-		show(a);
+		
 	}
 }
