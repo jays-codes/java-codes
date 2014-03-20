@@ -2,20 +2,20 @@ package ph.zai.util;
 
 import sedgewicks.stdlib.In;
 
-public class SortTemplate {
-	public static void sort(Comparable[] a){}
+public abstract class SortTemplate {
+	public abstract void sort(Comparable[] a);
 
-	private static boolean less(Comparable v, Comparable w){
+	protected static boolean less(Comparable v, Comparable w){
 		return v.compareTo(w) < 0;
 	}
 	
-	private static void exch(Comparable[] a, int i, int j){
+	protected static void exch(Comparable[] a, int i, int j){
 		Comparable t = a[i];
 		a[i] = a[j];
 		a[j] = t;
 	}
 	
-	private static void show(Comparable[] a){
+	protected void show(Comparable[] a){
 		for (int i=0;i<a.length;i++){
 			System.out.print(a[i] + " ");
 		}
@@ -30,21 +30,5 @@ public class SortTemplate {
 		return true;
 	}
 	
-	public static void main(String[] args){
-		
-        try {
-            In in = new In(args[0]);
 
-    		String[] a = in.readAllStrings();
-    		sort(a);
-    		assert isSorted(a);
-    		show(a);
-
-            
-
-        }
-        catch (Exception e) { System.out.println(e); }
-		
-		
-	}
 }
