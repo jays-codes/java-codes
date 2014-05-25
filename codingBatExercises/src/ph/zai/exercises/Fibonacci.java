@@ -4,16 +4,27 @@ public class Fibonacci {
 	
 	public static void main(String[] args){
 		int seed = 0;
-		int N = 40;
-		System.out.println("Initial Seed Value = " + seed);
+		int N = 45;
+		
+		long start, end;
+		
+		seed = 0;
+		start = System.currentTimeMillis();
+		System.out.println("\nSpeed Test 2:");
+		seed = Fibonacci.compute(seed + 1,0,N);
+		System.out.println("Seed Value at N[" + N + "]: " + seed);
+		end = System.currentTimeMillis();
+		System.out.println("run time: " + (end - start));
 		
 		//seed = Fibonacci.compute(seed + 1,0,N);
-		long start = System.currentTimeMillis();
-		System.out.println("Speed Test 1:");
+		start = System.currentTimeMillis();
+		System.out.println("\nSpeed Test 1:");
 		seed = Fibonacci.F(N);
 		System.out.println("Seed Value at N[" + N + "]: " + seed);
-		long end = System.currentTimeMillis();
+		end = System.currentTimeMillis();
 		System.out.println("run time: " + (end - start));
+		
+
 	}
 	
 	public static int compute(int seed, int prev, int n){
