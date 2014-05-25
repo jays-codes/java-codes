@@ -14,4 +14,16 @@ public class Palindrome {
 		return true;
 	}
 
+	public static boolean isPalindrome(int[] xInts) {
+		int arrLen = xInts.length;
+		
+		for (int i=0;i<arrLen/2;i++){
+			if (xInts[i] != xInts[arrLen-1-i]){
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
 }
