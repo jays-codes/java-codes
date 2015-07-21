@@ -29,7 +29,6 @@ public class Fibonacci {
 	
 	public static int compute(int seed, int prev, int n){
 		if (n==0) return prev;
-		
 		return compute(seed + prev, seed, n-1);
 	}
 	
