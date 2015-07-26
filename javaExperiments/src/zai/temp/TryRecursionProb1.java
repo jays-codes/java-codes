@@ -1,4 +1,4 @@
-package ph.zai.temp;
+package zai.temp;
 
 public class TryRecursionProb1 {
 

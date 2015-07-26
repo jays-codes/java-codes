@@ -1,4 +1,4 @@
-package ph.zai.temp;
+package zai.temp;
 
 import java.io.*;
 import java.util.Arrays;
