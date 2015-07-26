@@ -1,4 +1,4 @@
-package ph.zai.temp;
+package zai.temp;
 
 /*
  * Jay's notes: mystery1() computes for lcm and 
