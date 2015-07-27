@@ -10,6 +10,9 @@ public class TestFizzString {
 
 	FizzString fizz = new FizzString();
 	
+	
+	//yoyoyo
+	
 	@Test
 	public final void test() {
 		
