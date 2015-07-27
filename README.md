@@ -27,3 +27,7 @@ the main branch representing this project (in remote) would be -> java24hTrainer
 --- javaExperiments ----
 
 This project holds demo-able working applications
+
+--- jayJMSTest ----
+
+simple pub/sub example using open MQ
