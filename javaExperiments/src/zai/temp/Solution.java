@@ -10,7 +10,6 @@ public class Solution {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine();
         int n = Integer.parseInt(line);
-        
         line = br.readLine();
         String[] intsStr = line.split(" ");
 
