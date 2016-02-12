@@ -1,0 +1,8 @@
+XML Training Notes
+
+----------------------------------------
+
+11-feb-16
++ done setup new ide and connected training project to github
+
+-----------------------------------------
